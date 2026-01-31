@@ -29,7 +29,7 @@ export default function App() {
     try {
       const data = await fetchMovies(query);
 
-      if (data.length === 0) {
+      if (!data || data.length === 0) {
         toast.error("No movies found for your request.");
         return;
       }
